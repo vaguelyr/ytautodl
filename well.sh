@@ -6,14 +6,13 @@
 # convert to super small format optimized for voice
 # always have something to listen to i guess
 
-list[0]=url1
-list[1]=url2
-
-
 maxdl=3
-
-for index in ${list[*]}
-do
-	echo $index --extract-audio --audio-format aac --audio-quality 5
+while read line ; do
+	echo line $line
 	youtube-dl $index  --extract-audio --audio-format aac --audio-quality 5 --max-downloads $maxdl
-done
+done <<- EOF
+	url1
+	url2
+	ulr3
+EOF
+
