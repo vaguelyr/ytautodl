@@ -6,7 +6,12 @@
 # convert to super small format optimized for voice
 # always have something to listen to i guess
 
+dldir="tracks"
 maxdl=3
+
+mkdir -p "$dldir"
+pushd "$dldir" || exit
+
 while read line ; do
 	echo $line | grep '#' && continue # skip comments
 	echo line $line
