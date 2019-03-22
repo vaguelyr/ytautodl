@@ -8,6 +8,8 @@
 
 dldir="tracks"
 maxdl=3
+quality=9 # worst: good size, ok for voice. 
+
 
 mkdir -p "$dldir"
 pushd "$dldir" || exit
